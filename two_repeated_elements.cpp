@@ -1,6 +1,7 @@
 // You are given an integer array arr of size n+2. All elements of the array are in the range from 1 to n.
 // Also, all elements occur once except two numbers which occur twice. Find the two repeating numbers.
 
+//Method 1 - TC: O(n), SC: O(1)
 class Solution
 {
 public:
@@ -58,5 +59,24 @@ public:
                 return {y, x};
             }
         }
+    }
+};
+
+//Method 2 - TC: O(n), SC: O(1)
+
+class Solution {
+  public:
+    vector<int> twoRepeated(vector<int>& arr) {
+        vector<int>ans;
+        for(int i=0; i<arr.size(); i++){
+            int ind = abs(arr[i]);
+            if(arr[ind]<0){
+                ans.push_back(ind);
+                if(ans.size()==2) break;
+            }else{
+                arr[ind]=-arr[ind];
+            }
+        }
+        return ans;
     }
 };
