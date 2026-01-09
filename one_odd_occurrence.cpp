@@ -11,3 +11,5 @@ class Solution {
         return xor_arr;
     }
 };
+
+//TC: O(n), SC: O(1)
